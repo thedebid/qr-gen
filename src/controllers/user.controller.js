@@ -34,7 +34,7 @@ function registerSchema(req, res, next) {
     //  acceptTerms: Joi.boolean().valid(true).required(),
   });
   validateRequest(req, next, schema);
-}
+} 
 
 function register(req, res, next) {
   // console.log(req.body);

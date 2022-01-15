@@ -10,6 +10,15 @@ module.exports = {
         unique: true,
         primaryKey: true,
       },
+      user_id: {
+        type: Sequelize.UUID,
+        onDelete: "cascade",
+        references: {
+          model: "users",
+          key: "id",
+        },
+      },
+
       country: {
         type: Sequelize.STRING(255),
         allowNull: true,

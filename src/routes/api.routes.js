@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
-const userController = require("./../controllers/user.controller");
+const userController = require("../controllers/user.controller");
+const addressController = require("../controllers/address.controller");
 // const settingController = require("../modules/setting/setting.controller");
 
 // const categoryRoute = require("../modules/category/category.route");
@@ -18,6 +19,11 @@ const userController = require("./../controllers/user.controller");
 // const reviewRoute = require("../modules/review/review.route");
 
 router.use("/user", userController);
+
+// routes for addresses
+router.use("/address", addressController)
+
+
 // router.use("/setting", settingController);
 
 // router.use("/category", categoryRoute);

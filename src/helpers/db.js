@@ -23,7 +23,10 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.User = require("./../models/user.model")(sequelize, Sequelize);
+db.User = require("../models/user.model")(sequelize, Sequelize);
+db.Address = require("../models/address.model")(sequelize,Sequelize);
+
+
 
 // db.aboutus = require("./../modules/aboutus/models/about.model")(
 //   sequelize,
@@ -33,5 +36,15 @@ db.User = require("./../models/user.model")(sequelize, Sequelize);
 //   sequelize,
 //   Sequelize
 // );
+
+// Relations
+// db.Address.belongsTo(db.User);
+// db.User.hasOne(db.Address);
+
+// db.sequelize.sync({force:false,match:/qrgen$/})
+// .then(()=>{
+//     console.log("resync done!")
+// })
+
 
 module.exports = db;

@@ -1,6 +1,6 @@
 const db = require("../helpers/db");
 const bcrypt = require("bcryptjs");
-const config = require("./../configs/config.json");
+const config = require("../../config/config.json");
 const jwt = require("jsonwebtoken");
 module.exports = {
   register,

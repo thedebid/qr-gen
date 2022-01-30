@@ -1,7 +1,8 @@
 {
+  "API_URL": "/api/v1",
   "development": {
-    "username": "admin",
-    "password": "admin",
+    "username": "root",
+    "password": "debid",
     "database": "qrgen",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -25,5 +26,13 @@
   },
   "BCRYPT": {
     "SALT": 10
+  },
+  "emailFrom": "info@node-mysql-signup-verification-api.com",
+  "SMTPCONFIG": {
+    "service": "gmail",
+    "auth": {
+      "user": "linkwithproject0@gmail.com",
+      "pass": "K4l!k4k074"
+    }
   }
 }

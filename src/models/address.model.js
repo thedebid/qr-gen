@@ -1,22 +1,24 @@
 "use strict";
 
 module.exports = function (sequelize, Sequelize) {
-  const Address = sequelize.define("addresses", {
-    id: {
-      defaultValue: Sequelize.UUIDV4,
-      type: Sequelize.UUID,
-      allowNull: false,
-      unique: true,
-      primaryKey: true,
-    },
-    user_id: {
+  const Address = sequelize.define(
+    "addresses",
+    {
+      id: {
+        defaultValue: Sequelize.UUIDV4,
+        type: Sequelize.UUID,
+        allowNull: false,
+        unique: true,
+        primaryKey: true,
+      },
+      user_id: {
         type: Sequelize.UUID,
         onDelete: "cascade",
         references: {
           model: "users",
           key: "id",
         },
-        allowNull: false
+        allowNull: false,
       },
       country: {
         type: Sequelize.STRING(255),
@@ -38,10 +40,10 @@ module.exports = function (sequelize, Sequelize) {
         type: Sequelize.STRING(255),
         allowNull: false,
       },
-  },
-  {
-    // tableName: 'user_table',
-   timestamps: false,
- });
+    },
+    {
+      timestamps: false,
+    }
+  );
   return Address;
 };

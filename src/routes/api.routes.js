@@ -1,7 +1,11 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
-const userController = require("../controllers/user.controller");
-const addressController = require("../controllers/address.controller");
+const userController = require('../controllers/user.controller');
+const addressController = require('../controllers/address.controller');
+const qrController = require('../controllers/qr.controller');
+const packageController = require('../controllers/package.controller');
+const scanController = require('./../controllers/scan.controller');
+
 // const settingController = require("../modules/setting/setting.controller");
 
 // const categoryRoute = require("../modules/category/category.route");
@@ -18,14 +22,13 @@ const addressController = require("../controllers/address.controller");
 
 // const reviewRoute = require("../modules/review/review.route");
 
-router.use("/user", userController);
+router.use('/user', userController);
 
 // routes for addresses
-router.use("/address", addressController)
-
-
-// router.use("/setting", settingController);
-
+router.use('/user', addressController);
+router.use('/qr', qrController);
+router.use('/package', packageController); // router.use("/setting", settingController);
+router.use('/scan', scanController);
 // router.use("/category", categoryRoute);
 // router.use ('/supplier', supplierRoute)
 // router.use("/auth", authRoute);

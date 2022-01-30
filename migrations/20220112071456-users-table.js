@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return await queryInterface.createTable("users", {
+    return await queryInterface.createTable('users', {
       id: {
         defaultValue: Sequelize.UUID,
         type: Sequelize.UUID,
@@ -23,12 +23,36 @@ module.exports = {
         type: Sequelize.STRING(255),
         allowNull: false,
       },
-      address: {
+      role: {
         type: Sequelize.STRING(255),
         allowNull: false,
       },
-      createdAt: Sequelize.DATE,
-      updatedAt: Sequelize.DATE,
+      verificationToken: {
+        type: Sequelize.STRING(255),
+      },
+      verified: {
+        type: Sequelize.DATE,
+      },
+      resetToken: {
+        type: Sequelize.STRING(255),
+      },
+      resetTokenExpires: {
+        type: Sequelize.DATE,
+      },
+      passwordReset: {
+        type: Sequelize.DATE,
+      },
+      created: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.NOW,
+      },
+      updated: {
+        type: Sequelize.DATE,
+      },
+      isVerified: {
+        type: Sequelize.BOOLEAN,
+      },
     });
   },
 

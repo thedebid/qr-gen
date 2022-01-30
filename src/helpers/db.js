@@ -1,22 +1,56 @@
 'use strict';
 const Sequelize = require('sequelize');
-
+const database = {
+  username: 'tawatant_dvd',
+  password: '48346275',
+  database: 'tawatant_dvd',
+  host: '108.167.189.38',
+  dialect: 'mysql',
+};
 const sequelize = new Sequelize(
-  process.env.DATABASE_NAME,
-  process.env.DATABASE_USERNAME,
-  process.env.DATABASE_PASSWORD,
+  // process.env.DATABASE_NAME,
+  // process.env.DATABASE_USERNAME,
+  // process.env.DATABASE_PASSWORD,
+  // {
+  //   host: process.env.DATABASE_HOST,
+  //   port: process.env.DATABASE_PORT,
+  //   dialect: 'mysql',
+  //   pool: {
+  //     max: 15,
+  //     min: 5,
+  //     idle: 20000,
+  //     evict: 15000,
+  //     acquire: 30000,
+  //   },
+  // }
+  database.database,
+  database.username,
+  database.password,
   {
-    host: process.env.DATABASE_HOST,
-    port: process.env.DATABASE_PORT,
+    host: database.host,
+    port: 3306,
     dialect: 'mysql',
+    pool: {
+      max: 15,
+      min: 5,
+      idle: 20000,
+      evict: 15000,
+      acquire: 30000,
+    },
   }
 );
 
 try {
-  sequelize.authenticate();
-  console.log('CONNECTED TO DATABASE!');
-} catch (error) {
-  console.error('Unable to connect to the database', error);
+  sequelize
+    .authenticate()
+    .then(() => {
+      console.log('Connection to database has been established successfully.');
+    })
+    .catch((err) => {
+      console.error('Unable to connect to database:', err);
+    });
+} catch (err) {
+  console.log(err);
 }
 
 const db = {};

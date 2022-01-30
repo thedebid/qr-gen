@@ -1,24 +1,24 @@
 {
   "API_URL": "/api/v1",
   "development": {
-    "username": "root",
-    "password": "debid",
-    "database": "qrgen",
-    "host": "127.0.0.1",
+    "username": "tawatant_dvd",
+    "password": "48346275",
+    "database": "tawatant_dvd",
+    "host": "108.167.189.38",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "username": "tawatant_dvd",
+    "password": "48346275",
+    "database": "tawatant_dvd",
+    "host": "108.167.189.38",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "tawatant_dvd",
+    "password": "48346275",
+    "database": "tawatant_dvd",
+    "host": "108.167.189.38",
     "dialect": "mysql"
   },
   "JWT": {

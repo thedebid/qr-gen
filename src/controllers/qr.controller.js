@@ -27,10 +27,10 @@ async function createQRCode(req, res, next) {
     try {
       let origin = req.get('origin');
 
-      origin = origin.replace('https://', 'www.');
+      // origin = origin.replace('https://', 'www.');
 
       var QRsvg = new QRCode({
-        content: origin + '?id=' + userId,
+        content: origin + '/#/scanned?id=' + userId,
         join: true,
         container: 'svg-viewbox',
         width: 256,
